@@ -3,7 +3,9 @@ services:
   - docker
 
 before_install:
+  - cd frontend
   - docker build -t daenamkim/frontend -f Dockerfile.dev .
 
 script:
-  - dockder run daenamkim/frontend -- --coverage
+  - cd frontend
+  - docker run daenamkim/frontend -- --coverage
