@@ -7,4 +7,4 @@ before_install:
   - docker build -t daenamkim/frontend -f Dockerfile.dev .
 
 script:
-  - docker run daenamkim/frontend yarn test --coverage
+  - docker run daenamkim/frontend yarn test -- --coverage
