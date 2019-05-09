@@ -1,10 +1,10 @@
 FROM node:alpine as builder
 # run as "builder" phase
 WORKDIR '/app'
-COPY package.json .
+COPY package.json ./
 RUN npm install -g yarn
 RUN yarn
-COPY . .
+COPY ./ ./
 RUN yarn build
 
 FROM nginx
